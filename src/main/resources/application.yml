@@ -1,0 +1,28 @@
+logging:
+  level:
+    root: WARN
+    web: INFO
+    com:
+      smz: DEBUG
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gym_plus?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: mysql
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+token:
+  # JWT expiration is 1 hour
+  expiration: 3600000
+  # JWT secret key
+  # node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+  secret:
+    key: 85aabb6cc66ca0e98483a6d1881fc6bc5d8a0a45de2f028bdf8496f4b980947c
